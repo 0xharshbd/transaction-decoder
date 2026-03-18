@@ -3,7 +3,7 @@ import { describe, expect, it } from 'bun:test';
 import { Decoders } from "./decoders";
 
 
-import IERC_20_ABI from '../abis/IERC_20.abi.json' with { type: "json" };
+import IERC_20_ABI from '../plugins/erc/abi/IERC_20.abi.json' with { type: "json" };
 import type { Abi } from 'viem';
 import { DecoderAlreadyRegisteredError, DecoderNotFoundError } from './errors';
 

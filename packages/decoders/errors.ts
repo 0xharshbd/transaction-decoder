@@ -28,6 +28,6 @@ export class DecoderAlreadyRegisteredError extends DecoderError {
 
 export class DecoderNotFoundError extends DecoderError {
     constructor(signature: Hex) {
-        super(`Decoder for function ${signature} not found. Please register the decoder first.`);
+        super(`Decoder for function '${signature}' not found. Please register the decoder first.`);
     }
 }
