@@ -33,7 +33,7 @@ export class Verifier {
             throw new Error(`Intent for signature ${decoded.signature} not found`);
         }
 
-        return { intent: "swap", data: intent.transform(...decoded.args) };
+        return { intent: intent.type, data: intent.transform(...decoded.args) };
     }
 
 
