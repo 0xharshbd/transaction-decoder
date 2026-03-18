@@ -10,3 +10,16 @@ console.log(verifier.getIntent("0x095ea7b30000000000000000000000007a250d5630b4cf
 console.log(verifier.getIntent(kyberswap_calldata));
 console.log(verifier.getIntent(trasfer_calldata));
 console.log(verifier.getIntent(pancakeswap_calldata));
+
+const reponsetx = {
+    from: "0x",
+    to: "0x",
+    data: "12",
+}
+
+verifier.verify(reponsetx, {
+    type: "swap",
+    chain: 1,
+    path: [],
+    amount: 'in',
+})

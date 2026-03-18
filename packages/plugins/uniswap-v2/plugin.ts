@@ -17,6 +17,11 @@ export class UniswapV2Plugin extends AbstractVerifierPlugin {
         UNISWAP_V2_ROUTER_ABI as Abi,
     ];
 
+    readonly toAddresses: Record<number, Address> = {
+        1: "0x",
+        10: "12",
+    };
+
     private readonly intents: Intent[] = [
         {
             signature: "0x38ed1739",
