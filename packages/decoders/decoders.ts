@@ -95,8 +95,9 @@ export class Decoders {
         for (const abi of abis) {
             for (const func of this.extractFunctionSignatures(abi)) {
                 if (this.signatures.has(func.signature)) {
-                    const existing = this.signatures.get(func.signature);
-                    throw new DecoderAlreadyRegisteredError(func.name, existing?.name ?? "unknown");
+                    const existing = this.signatures.get(func.signature)!;
+                    
+                    throw new DecoderAlreadyRegisteredError(existing, func);
                 }
 
                 this.signatures.set(func.signature, func);
