@@ -11,6 +11,7 @@ export interface FunctionDefinition {
 
 export interface DecodedCalldata<TArgs> {
     function: string;
+    signature: Hex;
     args: TArgs;
 }
 
@@ -96,7 +97,7 @@ export class Decoders {
             for (const func of this.extractFunctionSignatures(abi)) {
                 if (this.signatures.has(func.signature)) {
                     const existing = this.signatures.get(func.signature)!;
-                    
+
                     throw new DecoderAlreadyRegisteredError(existing, func);
                 }
 
@@ -123,7 +124,7 @@ export class Decoders {
             data: calldata,
         });
 
-        return { function: decoded.functionName, args: decoded.args as TDecoded };
+        return { function: decoded.functionName, signature, args: decoded.args as TDecoded };
     }
 
     *[Symbol.iterator]() {
