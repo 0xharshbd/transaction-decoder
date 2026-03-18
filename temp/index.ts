@@ -6,7 +6,6 @@ const eip7702Calldata = "0xe9ae5c53010000000000000000000000000000000000000000000
 const data = decoder.decodeCalldata<[Hex, Hex]>(eip7702Calldata);
 const abiParams = parseAbiParameters('(address target, uint256 value, bytes data)[]');
 const decoded = decodeAbiParameters(abiParams, data.args[1]);
-
 for (const item of decoded) {
     const calldata = item.at(0)?.data;
 
