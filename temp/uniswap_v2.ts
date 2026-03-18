@@ -16,10 +16,3 @@ const reponsetx = {
     to: "0x",
     data: "12",
 }
-
-verifier.verify(reponsetx, {
-    type: "swap",
-    chain: 1,
-    path: [],
-    amount: 'in',
-})
