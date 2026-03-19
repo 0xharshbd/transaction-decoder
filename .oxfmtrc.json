@@ -7,5 +7,14 @@
     "arrowParens": "always",
     "endOfLine": "lf",
     "insertFinalNewline": true,
-    "ignorePatterns": ["node_modules", "dist", "out", "coverage"]
+    "ignorePatterns": ["node_modules", "dist", "out", "coverage"],
+    "sortImports": {
+        "order": "asc",
+        "ignoreCase": true,
+        "newlinesBetween": true,
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "type"]
+    },
+    "sortPackageJson": {
+        "sortScripts": true
+    }
 }

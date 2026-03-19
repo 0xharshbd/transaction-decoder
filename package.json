@@ -3,10 +3,10 @@
     "workspaces": [],
     "type": "module",
     "scripts": {
-        "lint": "oxlint -c .oxlintrc.json .",
-        "lint:fix": "oxlint -c .oxlintrc.json --fix .",
         "format": "oxfmt --write .",
-        "format:check": "oxfmt --check ."
+        "format:check": "oxfmt --check .",
+        "lint": "oxlint -c .oxlintrc.json .",
+        "lint:fix": "oxlint -c .oxlintrc.json --fix ."
     },
     "dependencies": {},
     "devDependencies": {
