@@ -1,4 +1,4 @@
-# @harsh/tx-verifier
+# @blockdaemon/transaction-decoder
 
 To install dependencies:
 

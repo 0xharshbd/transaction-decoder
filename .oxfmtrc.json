@@ -1,0 +1,11 @@
+{
+    "$schema": "./node_modules/oxfmt/configuration_schema.json",
+    "useTabs": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "insertFinalNewline": true,
+    "ignorePatterns": ["node_modules", "dist", "out", "coverage"]
+}

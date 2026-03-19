@@ -1,18 +1,20 @@
 {
-    "name": "@harsh/tx-verifier",
-    "module": "index.ts",
+    "name": "@blockdaemon/transaction-decoder",
+    "workspaces": [],
     "type": "module",
     "scripts": {
-        "print-decoders": "bun run ./script/print-decoders.ts"
+        "lint": "oxlint -c .oxlintrc.json .",
+        "lint:fix": "oxlint -c .oxlintrc.json --fix .",
+        "format": "oxfmt --write .",
+        "format:check": "oxfmt --check ."
     },
+    "dependencies": {},
     "devDependencies": {
-        "@types/bun": "latest"
+        "@types/bun": "latest",
+        "oxfmt": "^0.41.0",
+        "oxlint": "^1.56.0"
     },
     "peerDependencies": {
-        "typescript": "^5"
-    },
-    "dependencies": {
-        "viem": "^2.47.4",
-        "zod": "^4.3.6"
+        "typescript": "^5.9.3"
     }
 }
