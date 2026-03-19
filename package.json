@@ -1,6 +1,13 @@
 {
     "name": "@blockdaemon/transaction-decoder",
-    "workspaces": [],
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ],
+        "catalog": {
+            "viem": "^2.47.5"
+        }
+    },
     "type": "module",
     "scripts": {
         "format": "oxfmt --write .",
@@ -8,7 +15,6 @@
         "lint": "oxlint -c .oxlintrc.json .",
         "lint:fix": "oxlint -c .oxlintrc.json --fix ."
     },
-    "dependencies": {},
     "devDependencies": {
         "@types/bun": "latest",
         "oxfmt": "^0.41.0",

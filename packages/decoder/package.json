@@ -1,0 +1,8 @@
+{
+    "name": "@package/decoder",
+    "private": true,
+    "exports": "./index.ts",
+    "dependencies": {
+        "viem": "catalog:"
+    }
+}

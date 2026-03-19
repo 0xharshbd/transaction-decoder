@@ -12,7 +12,13 @@
         "order": "asc",
         "ignoreCase": true,
         "newlinesBetween": true,
-        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "type"]
+        "internalPattern": ["@blockdaemon/*"],
+        "groups": [
+            ["builtin", "type-builtin"],
+            ["external", "type-external"],
+            ["internal", "type-internal"],
+            ["parent", "sibling", "index", "type-parent", "type-sibling", "type-index"]
+        ]
     },
     "sortPackageJson": {
         "sortScripts": true

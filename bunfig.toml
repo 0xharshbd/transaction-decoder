@@ -1,0 +1,15 @@
+[install]
+# Use exact versions for better reproducibility
+exact = true
+
+[install.lockfile]
+# Generate a lockfile on bun install
+save = true
+
+[test]
+# Enable coverage reporting
+coverage = true
+
+[run]
+# Alias node to bun for all scripts
+bun = true

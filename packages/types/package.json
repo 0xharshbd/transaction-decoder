@@ -1,0 +1,8 @@
+{
+    "name": "@package/types",
+    "private": true,
+    "exports": "./index.ts",
+    "dependencies": {
+        "viem": "catalog:"
+    }
+}

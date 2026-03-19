@@ -20,7 +20,8 @@
             { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
         ],
         "import/no-cycle": "error",
-        "import/no-duplicates": "error"
+        "import/no-duplicates": "error",
+        "import/extensions": ["error", "ignorePackages", { "ts": "always" }]
     },
     "ignorePatterns": ["node_modules", "dist", "out", "coverage"],
     "overrides": [
