@@ -1,5 +1,7 @@
+import type { Hex } from "viem";
 import { sdk } from "..";
 import { z } from "zod";
+import { SwapPipeline } from "../packages/pipelines/defi/swap.pipeline";
 
 interface TransferIntent {
     intent: "transfer";
@@ -82,3 +84,35 @@ if (validSwap) {
     console.log(errorsSwap);
 }
 // --------------------------
+
+
+interface UnsignedTransactionLike {
+    chainId: Hex;
+    to: string;
+    value: Hex;
+    data: Hex;
+}
+
+interface IntentVerifier {
+    verify: (data: any) => Promise<boolean>;
+}
+
+enum Intens {
+    NATIVE_TRANSFER = "native_transfer",
+    SWAP = "swap",
+    APPROVAL = "approval",
+    TRANSFER = "transfer",
+    STAKE = "stake",
+}
+
+
+const request = {
+    amountIn: 1000000000000000000n,
+    amountOutMin: 1000000000000000000n,
+    path: ["0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", "0xCC42724C6683B7E57334c4E856f4c9965ED682bD"],
+    to: "0xCC42724C6683B7E57334c4E856f4c9965ED682bD",
+    deadline: null,
+};
+const resonse = await axios.post("https://api.uniswap.org/v2/swap", request);
+
+const isValid = await sdk.verify(response, new SwapPipeline().getPipeline(request));
