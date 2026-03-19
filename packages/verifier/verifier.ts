@@ -12,6 +12,8 @@ export class Verifier {
 
     private readonly intents: Map<Hex, Intent> = new Map();
 
+    private readonly intentsSchemas: Map<string, z.ZodType[]> = new Map();
+
     constructor(options: VerifierOptions) {
         for (const plugin of options.plugins) {
             plugin.useDecoder(this.decoder);
@@ -43,9 +45,18 @@ export class Verifier {
      * @param zodshema - The zodshema to check against
      * @returns The result of the check
      */
-    public async check(intent: any, zodshema: z.ZodType): Promise<{ valid: boolean, errors: any; }> {
+    public async check(calldata: Hex, zodshema: z.ZodType): Promise<{ valid: boolean, errors: any; }> {
         try {
-            await z.parseAsync(zodshema, intent.data);
+            const { intent, data } = this.getIntent(calldata);
+            const schema = this.intentsSchemas.get(intent);
+            if (!schema) {
+                throw new Error(`Schema for intent ${intent} not found`);
+            }
+
+            for (const s of schema) {
+                await z.parseAsync(s, data);
+            }
+
             return { valid: true, errors: null };
         } catch (error) {
             if (error instanceof z.ZodError) {

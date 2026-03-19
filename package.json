@@ -1,5 +1,5 @@
 {
-    "name": "@blockdaemon/transaction-verifier",
+    "name": "@harsh/tx-verifier",
     "module": "index.ts",
     "type": "module",
     "scripts": {

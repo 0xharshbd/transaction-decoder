@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@blockdaemon/transaction-verifier",
+      "name": "@harsh/tx-verifier",
       "dependencies": {
         "viem": "^2.47.4",
         "zod": "^4.3.6",
