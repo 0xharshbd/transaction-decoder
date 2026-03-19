@@ -1,9 +1,9 @@
 import { Erc20Plugin } from "./packages/plugins/erc/plugin";
 import { KyberswapPlugin } from "./packages/plugins/kyberswap/plugin";
 import { UniswapV2Plugin } from "./packages/plugins/uniswap-v2/plugin";
-import { createVerifier } from "./packages/verifier/verifier";
+import { createSDK } from "./packages/verifier/verifier";
 
-export const verifier = createVerifier({
+export const sdk = createSDK({
     plugins: [
         new Erc20Plugin(),
         // new Erc7821Plugin(),

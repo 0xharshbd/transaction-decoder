@@ -49,13 +49,9 @@ export class Verifier {
         try {
             const { intent, data } = this.getIntent(calldata);
             const schema = this.intentsSchemas.get(intent);
-            if (!schema) {
-                throw new Error(`Schema for intent ${intent} not found`);
-            }
 
-            for (const s of schema) {
-                await z.parseAsync(s, data);
-            }
+
+            await z.parseAsync(zodshema, data);
 
             return { valid: true, errors: null };
         } catch (error) {
@@ -73,6 +69,6 @@ export class Verifier {
     }
 }
 
-export function createVerifier(options: VerifierOptions) {
+export function createSDK(options: VerifierOptions) {
     return new Verifier(options);
 }

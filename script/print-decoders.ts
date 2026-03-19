@@ -1,6 +1,6 @@
-import { verifier } from "..";
+import { sdk } from "..";
 
-const list = Array.from(verifier.getDecoder());
+const list = Array.from(sdk.getDecoder());
 
 const maxName = Math.max(4, ...list.map((f) => f.name.length));
 const maxSig = Math.max(10, ...list.map((f) => f.signature.length));
