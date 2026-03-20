@@ -1,0 +1,12 @@
+# https://lefthook.dev/
+pre-commit:
+  parallel: false
+  commands:
+    oxfmt:
+      glob: "**/*"
+      run: oxfmt --write {staged_files}
+      stage_fixed: true
+    oxlint:
+      glob: "**/*.{ts,tsx,mts,cts}"
+      run: oxlint -c .oxlintrc.json --fix {staged_files}
+      stage_fixed: true

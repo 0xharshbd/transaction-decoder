@@ -6,6 +6,8 @@ To install dependencies:
 bun install
 ```
 
+This runs `prepare`, which installs [Lefthook](https://lefthook.dev/) `pre-commit` hooks (format staged files with `oxfmt`, lint with `oxlint --fix`). To skip once: `git commit --no-verify`.
+
 To run:
 
 ```bash
