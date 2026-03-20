@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test';
 
-import { encodeFunctionData, type AbiFunction } from 'viem';
+import { encodeFunctionData, type AbiFunction, type Hex } from 'viem';
 
 import { FunctionHashDecoder } from './function-hash-decoder.ts';
 
@@ -34,12 +34,14 @@ describe('FunctionHashDecoder', () => {
     });
 
     it('should decode the function arguments', () => {
-        const args = ['0x0123456789012345678901234567890123456789', 1000n];
+        type Args = [address: Hex, value: bigint];
+
+        const args: Args = ['0x0123456789012345678901234567890123456789', 1000n];
         const calldata = encodeFunctionData({
             abi: [abi],
             args,
         });
-        const data = decoder.decode(calldata);
-        expect(data).toEqual(args);
+        const [address, value] = decoder.decode<Args>(calldata);
+        expect([address, value]).toEqual(args);
     });
 });

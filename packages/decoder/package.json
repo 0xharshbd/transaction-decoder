@@ -3,6 +3,7 @@
     "private": true,
     "exports": "./index.ts",
     "dependencies": {
+        "@package/error": "workspace:*",
         "viem": "catalog:"
     }
 }

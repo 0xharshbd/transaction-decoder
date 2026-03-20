@@ -1,0 +1,5 @@
+{
+    "name": "@package/error",
+    "private": true,
+    "exports": "./index.ts"
+}

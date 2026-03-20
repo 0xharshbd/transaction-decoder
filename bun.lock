@@ -5,7 +5,7 @@
     "": {
       "name": "@blockdaemon/transaction-decoder",
       "devDependencies": {
-        "@types/bun": "latest",
+        "@types/bun": "1.3.11",
         "oxfmt": "^0.41.0",
         "oxlint": "^1.56.0",
       },
@@ -16,8 +16,12 @@
     "packages/decoder": {
       "name": "@package/decoder",
       "dependencies": {
+        "@package/error": "workspace:*",
         "viem": "catalog:",
       },
+    },
+    "packages/errors": {
+      "name": "@package/error",
     },
     "packages/types": {
       "name": "@package/types",
@@ -115,6 +119,8 @@
     "@oxlint/binding-win32-x64-msvc": ["@oxlint/binding-win32-x64-msvc@1.56.0", "", { "os": "win32", "cpu": "x64" }, "sha512-ZHa0clocjLmIDr+1LwoWtxRcoYniAvERotvwKUYKhH41NVfl0Y4LNbyQkwMZzwDvKklKGvGZ5+DAG58/Ik47tQ=="],
 
     "@package/decoder": ["@package/decoder@workspace:packages/decoder"],
+
+    "@package/error": ["@package/error@workspace:packages/errors"],
 
     "@package/types": ["@package/types@workspace:packages/types"],
 

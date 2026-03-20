@@ -24,6 +24,6 @@
         "noUnusedParameters": false,
         "noPropertyAccessFromIndexSignature": false
     },
-    "include": ["packages/**/*.ts"],
+    "include": ["packages/**/*.ts", "packages/**/*.test.ts"],
     "exclude": ["node_modules", "dist", "coverage"]
 }

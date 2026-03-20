@@ -1,6 +1,6 @@
 import { type AbiFunction, type Hex, toFunctionHash, decodeFunctionData } from 'viem';
 
-import type { CalldataDecoder } from './decoder.ts';
+import type { CalldataDecoder } from './calldata-decoder.ts';
 
 export class FunctionHashDecoder implements CalldataDecoder {
     private readonly abi: AbiFunction;

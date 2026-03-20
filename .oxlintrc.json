@@ -13,6 +13,7 @@
     "rules": {
         "eqeqeq": "error",
         "no-console": "warn",
+        "no-shadow": "off",
         "typescript/consistent-type-imports": ["error", { "prefer": "type-imports" }],
         "typescript/no-explicit-any": "warn",
         "typescript/no-unused-vars": [
