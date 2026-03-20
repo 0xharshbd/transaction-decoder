@@ -13,9 +13,16 @@
         "ignoreCase": true,
         "newlinesBetween": true,
         "internalPattern": ["@blockdaemon/*"],
+        "customGroups": [
+            {
+                "groupName": "package",
+                "elementNamePattern": ["@package/**"]
+            }
+        ],
         "groups": [
             ["builtin", "type-builtin"],
             ["external", "type-external"],
+            "package",
             ["internal", "type-internal"],
             ["parent", "sibling", "index", "type-parent", "type-sibling", "type-index"]
         ]

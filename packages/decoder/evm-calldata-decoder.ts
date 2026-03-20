@@ -1,5 +1,6 @@
-import { TransactionVerifierSdkError, SDKErrorCode } from '@package/error';
 import type { Abi, Hex } from 'viem';
+
+import { TransactionVerifierSdkError, SDKErrorCode } from '@package/error';
 
 import type { CalldataDecoder } from './calldata-decoder.ts';
 import { FunctionHashDecoder } from './function-hash-decoder.ts';

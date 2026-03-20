@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'bun:test';
 
-import { TransactionVerifierSdkError } from '@package/error';
 import { encodeFunctionData, type Abi, type AbiFunction, type Hex } from 'viem';
+
+import { TransactionVerifierSdkError } from '@package/error';
 
 import { EvmCalldataDecoder } from './evm-calldata-decoder.ts';
 import { FunctionHashDecoder } from './function-hash-decoder.ts';
