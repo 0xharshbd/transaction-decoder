@@ -2,7 +2,8 @@ export enum SDKErrorCode {
     FUNCTION_DECODER_NOT_FOUND = 'FUNCTION_DECODER_NOT_FOUND',
     FUNCTION_DECODER_ALREADY_EXISTS = 'FUNCTION_DECODER_ALREADY_EXISTS',
     INVALID_CALLDATA = 'INVALID_CALLDATA',
-    DECODER_NOT_SET = "DECODER_NOT_SET",
+    DECODER_NOT_SET = 'DECODER_NOT_SET',
+    PLUGIN_ERROR = 'PLUGIN_ERROR',
 }
 
 /**
@@ -13,7 +14,7 @@ export class TransactionVerifierSdkError extends Error {
 
     public readonly details?: Record<string, unknown>;
 
-    constructor(code: SDKErrorCode, message: string, details?: Record<string, unknown>) {
+    constructor(code: SDKErrorCode, message: string, details?: Record<string, unknown> & ErrorOptions) {
         super(message);
 
         this.name = 'TransactionVerifierSdkError';

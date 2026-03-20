@@ -1,14 +1,11 @@
 {
-    "name": "@package/plugins",
+    "name": "@blockdaemon/sdk",
     "private": true,
-    "exports": {
-        "./uniswap-v2": {
-            "import": "./uniswap-v2-plugin.ts"
-        }
-    },
+    "exports": "./index.ts",
     "dependencies": {
         "@package/decoder": "workspace:*",
         "@package/error": "workspace:*",
+        "@package/plugins": "workspace:*",
         "@package/types": "workspace:*",
         "viem": "catalog:"
     }
