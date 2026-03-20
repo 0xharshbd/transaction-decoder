@@ -23,6 +23,15 @@
     "packages/errors": {
       "name": "@package/error",
     },
+    "packages/plugins": {
+      "name": "@package/plugins",
+      "dependencies": {
+        "@package/decoder": "workspace:*",
+        "@package/error": "workspace:*",
+        "@package/types": "workspace:*",
+        "viem": "catalog:",
+      },
+    },
     "packages/types": {
       "name": "@package/types",
       "dependencies": {
@@ -121,6 +130,8 @@
     "@package/decoder": ["@package/decoder@workspace:packages/decoder"],
 
     "@package/error": ["@package/error@workspace:packages/errors"],
+
+    "@package/plugins": ["@package/plugins@workspace:packages/plugins"],
 
     "@package/types": ["@package/types@workspace:packages/types"],
 

@@ -6,5 +6,5 @@ export interface CalldataDecoder {
      * @param calldata - The calldata to decode
      * @returns The decoded calldata
      */
-    decode<TArgs extends unknown[]>(calldata: Hex): TArgs;
+    decode<TArgs extends unknown[]>(calldata: Hex): TArgs | null;
 }

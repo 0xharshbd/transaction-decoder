@@ -100,8 +100,13 @@ describe('Ethereum Calldata Decoder', () => {
         });
 
         it('should decode the calldata', () => {
-            const [spender, value] = decoder.decode<[Hex, bigint]>(calldata);
+            const result = decoder.decode<[Hex, bigint]>(calldata);
 
+            if (!result) {
+                throw new Error('Failed to decode the calldata');
+            }
+
+            const [spender, value] = result;
             expect(spender).toEqual('0x0123456789012345678901234567890123456789');
             expect(value).toEqual(1000n);
         });
@@ -113,6 +118,11 @@ describe('Ethereum Calldata Decoder', () => {
                 args: ['0x0123456789012345678901234567890123456789', 1000n],
             });
             expect(() => decoder.decode<[Hex, bigint]>(calldata)).toThrow('Function decoder not found for hash: 0x095ea7b3');
+        });
+
+        it('should return null if the calldata is empty', () => {
+            const result = decoder.decode<[Hex, bigint]>('0x');
+            expect(result).toBeNull();
         });
     });
 });

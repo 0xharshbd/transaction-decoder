@@ -30,7 +30,11 @@ export class FunctionHashDecoder implements CalldataDecoder {
      * @param calldata - The calldata to decode
      * @returns The decoded function data
      */
-    decode<TArgs extends unknown[]>(calldata: Hex): TArgs {
+    decode<TArgs extends unknown[]>(calldata: Hex): TArgs | null {
+        if (calldata === '0x') {
+            return null;
+        }
+
         const result = decodeFunctionData({ abi: [this.abi], data: calldata });
         return result.args as TArgs;
     }

@@ -1,0 +1,11 @@
+{
+    "name": "@package/plugins",
+    "private": true,
+    "exports": "./index.ts",
+    "dependencies": {
+        "@package/decoder": "workspace:*",
+        "@package/error": "workspace:*",
+        "@package/types": "workspace:*",
+        "viem": "catalog:"
+    }
+}
