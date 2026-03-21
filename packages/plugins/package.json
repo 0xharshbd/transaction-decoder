@@ -4,6 +4,9 @@
     "exports": {
         "./uniswap-v2": {
             "import": "./uniswap-v2-plugin.ts"
+        },
+        "./evm-transaction-verifier-plugin": {
+            "import": "./evm-transaction-verifier-plugin.ts"
         }
     },
     "dependencies": {

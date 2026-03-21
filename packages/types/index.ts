@@ -42,18 +42,13 @@ export type ApprovalTransactionAction = TransactionActionPayloadBox<
 
 export type UnknownTransactionAction = TransactionActionPayloadBox<TransactionAction.UNKNOWN, unknown>;
 
-export type TransactionActionData<TAction extends TransactionAction | (string & {}) = TransactionAction.UNKNOWN> =
-    TAction extends TransactionAction.SWAP
-        ? SwapTransactionAction
-        : TAction extends TransactionAction.APPROVAL
-          ? ApprovalTransactionAction
-          : TAction extends TransactionAction.UNKNOWN
-            ? UnknownTransactionAction
-            : UnknownTransactionAction;
+export type NativeTransferTransactionAction = TransactionActionPayloadBox<TransactionAction.NATIVE_TRANSFER, null>;
+
+export type TransactionActionData = SwapTransactionAction | ApprovalTransactionAction | NativeTransferTransactionAction | UnknownTransactionAction;
 
 export interface TransactionCalldataNormalizer {
     function: Hex;
-    normalizer(transaction: TransactionLike): TransactionActionData<TransactionAction>;
+    normalize(transaction: TransactionLike): TransactionActionData;
 }
 
 export interface TransactionVerifierPlugin {

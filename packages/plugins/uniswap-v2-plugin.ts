@@ -24,7 +24,7 @@ export class UniswapV2Plugin extends EvmPlugin {
             {
                 // https://docs.uniswap.org/contracts/v2/reference/smart-contracts/router-02#swapexacttokensfortokens
                 function: '0x38ed1739',
-                normalizer: (transaction) => {
+                normalize: (transaction) => {
                     const data = this.getDecoder().decode<UniswapV2Contact['swapExactTokensForTokens']>(transaction.data);
 
                     if (!data) {
@@ -46,7 +46,7 @@ export class UniswapV2Plugin extends EvmPlugin {
             {
                 // swapExactETHForTokens - https://docs.uniswap.org/contracts/v2/reference/smart-contracts/router-02#swapexactethfortokens
                 function: '0x7ff36ab5',
-                normalizer: (transaction) => {
+                normalize: (transaction) => {
                     const data = this.getDecoder().decode<UniswapV2Contact['swapExactETHForTokens']>(transaction.data);
 
                     if (!data) {
@@ -68,7 +68,7 @@ export class UniswapV2Plugin extends EvmPlugin {
             {
                 // swapExactTokensForETH - https://docs.uniswap.org/contracts/v2/reference/smart-contracts/router-02#swapexacttokensforeth
                 function: '0x18cbafe5',
-                normalizer: (transaction) => {
+                normalize: (transaction) => {
                     const data = this.getDecoder().decode<UniswapV2Contact['swapExactTokensForETH']>(transaction.data);
 
                     if (!data) {

@@ -51,7 +51,7 @@ describe('UniswapV2Plugin', () => {
         };
         const functionHash = decoder.getFunctionHash(transaction.data);
         const normalizer = plugin.getNormalizerForFunction(functionHash);
-        const action = normalizer.normalizer(transaction);
+        const action = normalizer.normalize(transaction);
 
         expect(action).toBeDefined();
         expect(action.action).toEqual(TransactionAction.SWAP);
@@ -81,7 +81,7 @@ describe('UniswapV2Plugin', () => {
         };
         const functionHash = decoder.getFunctionHash(transaction.data);
         const normalizer = plugin.getNormalizerForFunction(functionHash);
-        const action = normalizer.normalizer(transaction);
+        const action = normalizer.normalize(transaction);
 
         expect(action).toBeDefined();
         expect(action.action).toEqual(TransactionAction.SWAP);
@@ -112,7 +112,7 @@ describe('UniswapV2Plugin', () => {
         };
         const functionHash = decoder.getFunctionHash(transaction.data);
         const normalizer = plugin.getNormalizerForFunction(functionHash);
-        const action = normalizer.normalizer(transaction);
+        const action = normalizer.normalize(transaction);
 
         expect(action).toBeDefined();
         expect(action.action).toEqual(TransactionAction.SWAP);

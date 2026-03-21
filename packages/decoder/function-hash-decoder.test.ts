@@ -41,7 +41,12 @@ describe('FunctionHashDecoder', () => {
             abi: [abi],
             args,
         });
-        const [address, value] = decoder.decode<Args>(calldata);
+        const decoded = decoder.decode<Args>(calldata);
+
+        if (!decoded) {
+            throw new Error('Failed to decode the function arguments');
+        }
+        const [address, value] = decoded;
         expect([address, value]).toEqual(args);
     });
 });

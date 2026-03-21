@@ -11,11 +11,11 @@
     },
     "type": "module",
     "scripts": {
-        "prepare": "lefthook install",
         "format": "oxfmt --write .",
         "format:check": "oxfmt --check .",
         "lint": "oxlint -c .oxlintrc.json .",
         "lint:fix": "oxlint -c .oxlintrc.json --fix .",
+        "prepare": "lefthook install",
         "typecheck": "tsc --noEmit"
     },
     "devDependencies": {
