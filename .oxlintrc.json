@@ -3,34 +3,34 @@
     "plugins": ["typescript", "import"],
     "env": {
         "es2022": true,
-        "node": true
+        "node": true,
     },
     "categories": {
         "correctness": "error",
         "suspicious": "warn",
-        "perf": "warn"
+        "perf": "warn",
     },
     "rules": {
-        "eqeqeq": "error",
+        "eqeqeq": ["error", "always", { "null": "ignore" }],
         "no-console": "warn",
         "no-shadow": "off",
         "typescript/consistent-type-imports": ["error", { "prefer": "type-imports" }],
         "typescript/no-explicit-any": "warn",
         "typescript/no-unused-vars": [
             "warn",
-            { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+            { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" },
         ],
         "import/no-cycle": "error",
         "import/no-duplicates": "error",
-        "import/extensions": ["error", "ignorePackages", { "ts": "always" }]
+        "import/extensions": ["error", "ignorePackages", { "ts": "always" }],
     },
     "ignorePatterns": ["node_modules", "dist", "out", "coverage"],
     "overrides": [
         {
             "files": ["*.test.ts", "*.spec.ts"],
             "rules": {
-                "typescript/no-explicit-any": "off"
-            }
-        }
-    ]
+                "typescript/no-explicit-any": "off",
+            },
+        },
+    ],
 }

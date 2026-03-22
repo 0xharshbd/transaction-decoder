@@ -1,8 +1,8 @@
-import type { Abi, Hex } from 'viem';
+import type { Abi } from 'viem';
 
 import type { EvmCalldataDecoder } from '@package/decoder';
 import { SDKErrorCode, TransactionVerifierSdkError } from '@package/error';
-import type { TransactionAction, TransactionActionData, TransactionCalldataNormalizer, TransactionVerifierPlugin } from '@package/types';
+import type { TransactionCalldataNormalizer, TransactionVerifierPlugin } from '@package/types';
 
 export abstract class EvmPlugin implements TransactionVerifierPlugin {
     private decoder?: EvmCalldataDecoder;

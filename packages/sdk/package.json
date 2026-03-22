@@ -7,6 +7,7 @@
         "@package/error": "workspace:*",
         "@package/plugins": "workspace:*",
         "@package/types": "workspace:*",
+        "@package/verifier": "workspace:*",
         "viem": "catalog:"
     }
 }
