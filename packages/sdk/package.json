@@ -1,13 +1,33 @@
 {
-    "name": "@blockdaemon/sdk",
-    "private": true,
-    "exports": "./index.ts",
+    "name": "@blockdaemon/transaction-decoder",
+    "version": "0.1.0",
+    "description": "Blockdaemon EVM transaction decoder and verifier SDK",
+    "license": "MIT",
+    "files": [
+        "dist"
+    ],
+    "type": "module",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "scripts": {
+        "build": "tsup",
+        "prepublishOnly": "bun run build"
+    },
     "dependencies": {
-        "@package/decoder": "workspace:*",
-        "@package/error": "workspace:*",
-        "@package/plugins": "workspace:*",
-        "@package/types": "workspace:*",
-        "@package/verifier": "workspace:*",
-        "viem": "catalog:"
+        "zod": "4.3.6"
+    },
+    "devDependencies": {
+        "tsup": "8.5.1"
+    },
+    "peerDependencies": {
+        "viem": "^2.47.5"
     }
 }

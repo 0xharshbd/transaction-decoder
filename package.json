@@ -15,7 +15,9 @@
         "format:check": "oxfmt --check .",
         "lint": "oxlint -c .oxlintrc.json .",
         "lint:fix": "oxlint -c .oxlintrc.json --fix .",
+        "build": "bun run --cwd packages/sdk build",
         "prepare": "lefthook install",
+        "publish:sdk": "npm publish --access public packages/sdk",
         "typecheck": "tsc --noEmit"
     },
     "devDependencies": {
