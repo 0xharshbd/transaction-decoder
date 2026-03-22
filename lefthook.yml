@@ -3,10 +3,10 @@ pre-commit:
   parallel: false
   commands:
     oxfmt:
-      glob: "{**/*,!(node_modules|dist|out|coverage)/**}"
+      glob: '{**/*,!(node_modules|dist|out|coverage)/**}'
       run: bun x oxfmt --write {staged_files}
       stage_fixed: true
     oxlint:
-      glob: "**/*.{ts,tsx,mts,cts}"
+      glob: '**/*.{ts,tsx,mts,cts}'
       run: bun x oxlint -c .oxlintrc.json --fix {staged_files}
       stage_fixed: true
