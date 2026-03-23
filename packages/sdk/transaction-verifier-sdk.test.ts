@@ -4,7 +4,7 @@ import { z } from 'zod';
 
 import { UniswapV2Plugin } from '@package/plugins/uniswap-v2';
 import type { TransactionLike } from '@package/types';
-import { CustomTransactionVerifier, ZodTransactionSchemaVerifier } from '@package/verifier';
+import { ZodTransactionSchemaVerifier } from '@package/verifier';
 
 import { createTransactionVerifierSdk, TransactionVerifierSdk } from './transaction-verifier-sdk.ts';
 
@@ -42,10 +42,6 @@ describe('TransactionVerifierSdk', () => {
                 value: z.literal(transaction.value),
                 data: z.literal(transaction.data),
                 chainId: z.literal(transaction.chainId),
-            }),
-
-            new CustomTransactionVerifier(async (request) => {
-                console.log('Is Transaction Value Zero?', request.getTransaction().value === 0n);
             }),
         ]);
 
